@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <script>
+      function insertNum(num) {
+        console.log("insert");
+        document.querySelector(".textview").style.textAlign = "left";
+        document.querySelector(".textview").value =
+          document.querySelector(".textview").value + num;
+      }
+
+      function calculate() {
+        document.querySelector(".textview").style.textAlign = "justify";
+        let expression = document.querySelector(".textview").value;
+        document.querySelector(".textview").style.textAlign = "right";
+        document.querySelector(".textview").value = eval(expression);
+      }
+
+      function clean() {
+        document.querySelector(".textview").value = "";
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #e9e4f0;
+      }
+
+      .button {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        margin: 4px;
+      }
+
+      .textview {
+        margin-top: 4rem;
+        height: 4rem;
+        width: 14rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <form name="form">
+        <input class="textview" type="" />
+      </form>
+      <br />
+
+      <table>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="1"
+              onclick="insertNum(1)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="2"
+              onclick="insertNum(2)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="3"
+              onclick="insertNum(3)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="+"
+              onclick="insertNum('+')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="4"
+              onclick="insertNum(4)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="5"
+              onclick="insertNum(5)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="6"
+              onclick="insertNum(6)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="-"
+              onclick="insertNum('-')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="7"
+              onclick="insertNum(7)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="8"
+              onclick="insertNum(8)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="9"
+              onclick="insertNum(9)"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="*"
+              onclick="insertNum('*')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="."
+              onclick="insertNum('.')"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="="
+              onclick="calculate()"
+            />
+          </td>
+          <td>
+            <input class="button" type="button" value="C" onclick="clean()" />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="/"
+              onclick="insertNum('/')"
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
